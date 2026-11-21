@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Charu ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background: radial-gradient(circle at center, #290d24, #09030d 75%);
+    color: white;
+    font-family: Georgia, serif;
+}
+
+/* Background glow */
+.glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: #ff1e6840;
+    filter: blur(120px);
+    top: 30%;
+    left: 35%;
+    pointer-events: none;
+}
+
+/* Falling elements */
+.fall {
+    position: fixed;
+    top: -50px;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 1;
+}
+
+.heart {
+    color: #ff6b9d;
+    text-shadow: 0 0 15px #ff4d88;
+}
+
+.petal {
+    filter: drop-shadow(0 0 5px #ff7295);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Main screen */
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.subtitle {
+    letter-spacing: 5px;
+    color: #e8a8c0;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 75px);
+    font-weight: normal;
+    color: #ffe5ee;
+    text-shadow: 0 0 25px #ff4b87;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 15px #ff4b8770;
+    }
+    50% {
+        text-shadow: 0 0 40px #ff4b87;
+    }
+}
+
+.message {
+    margin-top: 20px;
+    color: #e6bdce;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.envelope {
+    margin-top: 45px;
+    font-size: 90px;
+    cursor: pointer;
+    transition: 0.4s;
+    animation: float 3s infinite ease-in-out;
+}
+
+.envelope:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px pink);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.click {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #dca7bc;
+    letter-spacing: 3px;
+}
+
+/* Letter popup */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 10, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.letter {
+    background: linear-gradient(145deg, #fff0f5, #f8dce8);
+    color: #54253c;
+    max-width: 500px;
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 5px;
+    transform: translateY(40px) scale(0.9);
+    transition: 0.5s;
+    box-shadow: 0 0 60px #ff4d8760;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.overlay.show .letter {
+    transform: translateY(0) scale(1);
+}
+
+.letter h2 {
+    font-weight: normal;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #8e315a;
+}
+
+.letter p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.close {
+    margin-top: 25px;
+    border: none;
+    background: #8e315a;
+    color: white;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.signature {
+    margin-top: 25px;
+    color: #a43b67;
+    font-style: italic;
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+
+    <div class="subtitle">A LITTLE SOMETHING MADE WITH LOVE</div>
+
+    <h1>For Charu ❤️</h1>
+
+    <div class="message">
+        Some feelings are too beautiful to be left unspoken.
+    </div>
+
+    <div class="envelope" onclick="openLetter()">💌</div>
+
+    <div class="click">TOUCH THE LETTER</div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="closeLetter(event)">
+
+    <div class="letter" onclick="event.stopPropagation()">
+
+        <h2>Dear Charu ❤️</h2>
+
+        <p>
+            Some people come into our lives unexpectedly,
+            and somehow make everything feel a little more beautiful.
+        </p>
+
+        <br>
+
+        <p>
+            I don't know how to explain it, but there's something
+            about you that makes even ordinary moments feel special.
+            And if I could choose one place to be whenever the world
+            feels a little too loud, I think it would be right beside you.
+        </p>
+
+        <br>
+
+        <p>
+            Maybe we're not perfect, and maybe life won't always
+            be easy, but there are some feelings that are worth
+            holding onto, no matter how many times life tests them.
+        </p>
+
+        <br>
+
+        <p>
+            I'm just glad that somewhere in this huge world,
+            our paths crossed.
+        </p>
+
+       <div class="signature">
+          With love,<br>
+          Atharva ❤️
+       </div>
+
+        <button class="close" onclick="closeLetter()">Close letter</button>
+
+    </div>
+
+</div>
+
+<script>
+
+// Falling hearts and rose petals
+function createFall() {
+
+    const item = document.createElement("div");
+    item.classList.add("fall");
+
+    const isHeart = Math.random() > 0.45;
+
+    if (isHeart) {
+        item.innerHTML = ["♥", "♡", "❤", "💗"][Math.floor(Math.random() * 4)];
+        item.classList.add("heart");
+    } else {
+        item.innerHTML = ["🌹", "🌸", "🥀"][Math.floor(Math.random() * 3)];
+        item.classList.add("petal");
+    }
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (Math.random() * 18 + 14) + "px";
+    item.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+        item.remove();
+    }, 10000);
+}
+
+// Continuously create falling hearts and petals
+setInterval(createFall, 350);
+
+// Open letter
+function openLetter() {
+    document.getElementById("overlay").classList.add("show");
+}
+
+// Close letter
+function closeLetter(event) {
+    if (!event || event.target.id === "overlay") {
+        document.getElementById("overlay").classList.remove("show");
+    }
+}
+
+</script>
+
+</body>
+</html>
