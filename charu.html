@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somewhere Between You & Me</title>
+    <link rel="stylesheet" href="charu.css">
+</head>
+
+<body>
+
+    <div id="stars"></div>
+    <div id="hearts"></div>
+
+    <main>
+
+        <!-- SCREEN 1 -->
+        <section class="screen active" id="screen1">
+            <div class="moon"></div>
+
+            <div class="content">
+                <p class="eyebrow">A LITTLE UNIVERSE, JUST FOR YOU</p>
+
+                <h1>Somewhere<br>
+                    <span>Between You & Me</span>
+                </h1>
+
+                <p class="message">
+                    Some people are simply meant to find
+                    their way back to each other.
+                </p>
+
+                <button onclick="goToScreen(2)">
+                    Enter my little universe <span>♡</span>
+                </button>
+
+                <p class="footer-text">made with love, just for you</p>
+            </div>
+        </section>
+
+
+        <!-- SCREEN 2 -->
+        <section class="screen" id="screen2">
+            <div class="content">
+
+                <p class="eyebrow">AND HERE YOU ARE</p>
+
+                <h1>Welcome,<br>
+                    <span>my Charu.</span>
+                </h1>
+
+                <p class="message">
+                    Out of all the places you could be,
+                    I'm glad you found your way here.
+                    This little universe was made just for you.
+                </p>
+
+                <button onclick="goToScreen(3)">
+                    There's more for you ♡
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- SCREEN 3 -->
+        <section class="screen" id="screen3">
+            <div class="content">
+
+                <p class="eyebrow">A FEW THINGS I NEVER WANT YOU TO FORGET</p>
+
+                <h1>My little universe<br>
+                    <span>has you in it.</span>
+                </h1>
+
+                <p class="message">
+                    Tap each little star. There is something
+                    I want you to remember.
+                </p>
+
+                <div class="love-cards">
+
+                    <div class="love-card" onclick="revealCard(this)">
+                        <div class="card-front">
+                            <span class="card-icon">✦</span>
+                            <h3>One little thought</h3>
+                            <p>Tap to discover</p>
+                        </div>
+
+                        <div class="card-secret">
+                            Even on the most ordinary days,
+                            you somehow make my world feel special.
+                        </div>
+                    </div>
+
+                    <div class="love-card" onclick="revealCard(this)">
+                        <div class="card-front">
+                            <span class="card-icon">☾</span>
+                            <h3>One little promise</h3>
+                            <p>Tap to discover</p>
+                        </div>
+
+                        <div class="card-secret">
+                            I don't need every day to be perfect.
+                            I just want the little moments
+                            that feel like us.
+                        </div>
+                    </div>
+
+                    <div class="love-card" onclick="revealCard(this)">
+                        <div class="card-front">
+                            <span class="card-icon">♡</span>
+                            <h3>One little truth</h3>
+                            <p>Tap to discover</p>
+                        </div>
+
+                        <div class="card-secret">
+                            Somehow, through all the chapters,
+                            my heart still knows your way.
+                        </div>
+                    </div>
+
+                </div>
+
+                <button onclick="goToScreen(4)">
+                    Read something from my heart ♡
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- SCREEN 4 -->
+        <section class="screen" id="screen4">
+            <div class="content letter-content">
+
+                <p class="eyebrow">A LETTER FOR YOU</p>
+
+                <h1>To my <span>Charu</span></h1>
+
+                <div class="letter">
+
+                    <p>
+                        My favourite Charu(hulk),
+                    </p>
+
+                    <p>
+                        Sometimes I wonder how certain people manage
+                        to become such a beautiful part of our lives.
+                        How someone can go from being just a person
+                        to becoming a thought that makes us smile
+                        without even trying.
+                    </p>
+
+                    <p>
+                        And somehow, you became that person for me.
+                    </p>
+
+                    <p>
+                        I know life isn't always simple.
+                        We have our own fears, our own overthinking,
+                        and days when everything feels a little too much.
+                        But I hope we never forget how beautiful
+                        it is to have moments where we can simply
+                        laugh, talk, and be ourselves.
+                    </p>
+
+                    <p>
+                        I don't know what every tomorrow holds,
+                        but I know that today, I'm grateful for you.
+                    </p>
+
+                    <p>
+                        For your smile, your madness,
+                        your little habits, your voice,
+                        and all the tiny things that make you you.
+                    </p>
+
+                    <p>
+                        If life ever gets too loud,
+                        I hope you remember that somewhere,
+                        there is someone who genuinely wishes
+                        to see you happy.
+                    </p>
+
+                    <p class="signature">
+                        Always with a little love,<br>
+                        <span>Someone who is happy to have found you ♡</span>
+                    </p>
+
+                </div>
+
+                <button onclick="goToScreen(5)">
+                    One last thing... ♡
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- SCREEN 5 -->
+        <section class="screen" id="screen5">
+    <div class="content final-content">
+
+        <div class="final-moon">☾</div>
+
+        <p class="eyebrow">AND IF YOU EVER FORGET</p>
+
+        <h1>In a universe<br>
+            full of stars...</h1>
+
+        <h2><span>I'd still look for you.</span></h2>
+
+        <p class="message">
+            Not because you're the only star in the sky,
+            but because somehow, you're the one
+            that feels like home.
+        </p>
+
+        <div class="final-heart">♡</div>
+
+        <p class="footer-text">
+            This little universe will always have a place for you.
+        </p>
+
+        <button onclick="restartUniverse()">
+            Start our little universe again ↺
+        </button>
+
+    </div>
+</section>
+
+    </main>
+
+    <script src="charu.js"></script>
+
+</body>
+</html>
